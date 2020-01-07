@@ -13,6 +13,8 @@
 
 > `Simulation` : [Theory] / [Basic example]
 >
+> [sss]: https://github.com/minje46/Algorithm_Solving/blob/master/00.Simulation/1021_circular_queue.cpp
+>
 > 
 
 
