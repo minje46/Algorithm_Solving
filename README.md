@@ -11,9 +11,9 @@
 * `theory` : summarized by mark down.
 * `problems` : problem solved by c++.
 
-> `Simulation` : [Theory] / [Basic example]
+> `Simulation` : [Basic](https://github.com/minje46/Algorithm_Solving/blob/master/00.Simulation/1021_circular_queue.cpp "basic")
 >
-> [sss]: https://github.com/minje46/Algorithm_Solving/blob/master/00.Simulation/1021_circular_queue.cpp	"bsa"
+> 
 >
 > 
 
