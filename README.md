@@ -1,9 +1,17 @@
+# Goal
+
+**Don't be fail in coding test anymore in 2020.**
+
+
+
 # Algorithm
 
-**Study algorithm concept and implement basic logic of algorithm what i learned today.**
+**Do learn algorithm concept** 
 
-* Algorithm concept by mark down language.
-* Basic logic of algorithm by C++ language.
+* `theory` : summarized by mark down.
+* `problems` : problem solved by c++.
+
+> sasdsad
 
 
 
