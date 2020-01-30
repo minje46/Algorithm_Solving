@@ -1,71 +1,77 @@
 #include<iostream>
+#include<memory.h>
 #include<queue>
 
 #define MAX 1001
+#define INF 987654321
 
 using namespace std;
 
 const int dy[4] = { -1,1,0,0 };
 const int dx[4] = { 0,0,-1,1 };
 
-struct location
+struct Location						// Location = The memory for queue.
 {
-	int y, x;
-	bool crush;
+	int y, x;								// Coordinates.
+	bool crush;							// Wall crush.
 };
 
-int N, M;							// N = The height of mpa.				M = The width of map.
-char map[MAX][MAX];	// map = The memory of input data.
-int visit[2][MAX][MAX];	// visit = The memory of visited or not.
+int N, M;									// N = The height of mpa.				M = The width of map.
+char map[MAX][MAX];			// map = The memory of input data.
+int dist[2][MAX][MAX];			// dist = The memory of how far the distance is.
+int answer;								// answer = The shortest way to arrive as output.
 
-int BFS(void)		// To figure out the shortest way to arrive at destination.
+int BFS()			// To figure out the shortest way to arrived at destination.	
 {
-	queue<location> que;
-	que.push({ 1,1,true });
-	visit[1][1][1] = 1;
+	queue<Location> que;			// Base state.
+	que.push({ 0,0,false });
+	dist[0][0][0] = 1;
 	while (!que.empty())
 	{
 		auto cur = que.front();
 		que.pop();
 
-		if (cur.y == N && cur.x == M)		// Base case. [Destination.]
-			return visit[cur.crush][cur.y][cur.x];
+		if (cur.y == N - 1 && cur.x == M - 1)						// Destination.
+			return dist[cur.crush][cur.y][cur.x];
 
 		for (int i = 0; i < 4; i++)
 		{
 			int ny = cur.y + dy[i];
 			int nx = cur.x + dx[i];
 
-			if (ny<1 || ny>N || nx<1 || nx>M)		// Overflow.
+			if (ny < 0 || ny >= N || nx < 0 || nx >= M)			// Overflow.
 				continue;
 
-			if (visit[cur.crush][ny][nx] == 0 && map[ny][nx] == '0')		// Not visited yet. + Empty space.
-			{
-				visit[cur.crush][ny][nx] = visit[cur.crush][cur.y][cur.x] + 1;
+			if (!dist[cur.crush][ny][nx] && map[ny][nx] == '0')		// Not visit yet. + Empty space.
+			{																	// [Empty space인 경우에는, bfs로 방문한 것 자체가 최단거리.]
 				que.push({ ny,nx, cur.crush });
+				dist[cur.crush][ny][nx] = dist[cur.crush][cur.y][cur.x] + 1;
 			}
-			else if (map[ny][nx] == '1' && cur.crush)			// Wall. + Possible to crush.
-			{
-				visit[!cur.crush][ny][nx] = visit[cur.crush][cur.y][cur.x] + 1;
-				que.push({ ny,nx,false });
+
+			if (map[ny][nx] == '1' && !cur.crush)				// Wall. + Possible crush.		
+			{																	// [Wall인 경우에는, 이미 방문했을 수가 없기 때문에 고려X.]
+				que.push({ ny,nx, !cur.crush });
+				dist[!cur.crush][ny][nx] = dist[cur.crush][cur.y][cur.x] + 1;
 			}
 		}
 	}
-	return -1;			// Impossible case.
+	return -1;
 }
-
 
 int main(void)
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(0);	cout.tie(0);
+	memset(dist, 0, sizeof(dist));
 
-	cin >> N >> M;						// The size of map.
-	for (int i = 1; i <= N; i++)
+	cin >> N >> M;
+	for (int i = 0; i < N; i++)
 	{
-		for (int j = 1; j <= M; j++)
-			cin >> map[i][j];			// Input data.
+		for (int j = 0; j < M; j++)
+			cin >> map[i][j];
 	}
 
-	cout << BFS() << endl;			// Output.
+	answer = BFS();
+
+	cout << answer << endl;
 }
