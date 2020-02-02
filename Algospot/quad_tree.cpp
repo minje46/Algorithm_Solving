@@ -9,7 +9,7 @@ string DFS(string::iterator &it)		// To figure out each compression in quad tree
 	it++;										// [iterator의 주소값을 parameter로 활용하기 때문에, ++된 주소값이 추후의 it에도 적용.]	
 	if (head == 'b' || head == 'w')	// Base case.	[기저사례 확인 전, first character는 확인 했다는 것을 표기하기 위해 it++을 먼저 수행.]
 		return string(1, head);			
-
+														
 	string up_lf = DFS(it);				// Upper Left.
 	string up_rt = DFS(it);				// Upper Right.
 	string down_lf = DFS(it);			// Down Left.
