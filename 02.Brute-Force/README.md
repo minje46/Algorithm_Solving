@@ -8,7 +8,7 @@
   >
   > `cons` : 답을 찾는데 시간이 오래 걸린다.
   >
-  > **Examples** : `Brute-force` / `Divide-conquer` / `Permutation` / `Back tracking` / `Bit mask`
+  > **Examples** : `Brute-force` / `Divide-conquer` / `Back tracking` / `Bit mask`
 ------
 
 ## 1. Brute-Force
@@ -21,7 +21,7 @@
   > 2. **구조화된 문제를 `nested-loop`를 통해 모두 탐색.**
   > 3. **적절한 해를 찾는다.**
   >
-  > * **Psuedo-code**
+  > * **Pseudo-code**
   >
   >   ```c++
   >   void Brute_Force(int n)	// Ex : 자연수n의 약수들 합
