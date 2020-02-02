@@ -27,7 +27,7 @@ void Divide(int x, int y, int n)		// To divide the square area within n area.
 		answer[map[x][y] + 1]++;
 		return;
 	}
-
+					
 	int k = n / 3;						// Set the smaller area	 with divided.
 	for (int i = 0; i < 3; i++)
 		for (int j = 0; j < 3; j++)
