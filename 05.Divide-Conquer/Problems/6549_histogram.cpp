@@ -64,7 +64,7 @@ long long largest(vector<int> &arr, vector<int> &tree, int start, int end)
 		if (area < temp)					// Is it maximum area?
 			area = temp;
 	}
-
+					
 	if (m + 1 <= end)						// Check it has right parts.
 	{
 		long long temp = largest(arr, tree, m + 1, end);
