@@ -1,60 +1,68 @@
 # Dynamic Programming
 
-- **Dynamic programming is soving the problem with dividing from big to small.**
-
-  <br>(다이나믹 프로그래밍은 큰 문제를 작은 문제로 나눠서 푸는 알고리즘이다.)
+- **Dynamic programming은 처음 문제를 더 작은 문제들로 나눈뒤 각 조각의 답을 계산하고, 이를 활용하여 원래 문제에 대한 답을 얻는 방식.**
 
 ------
 
 ## 1. LIS (Longest Increasing Subsequence)
 
-- **LIS is algorithm to find longest increasing subsequence.**
+- **LIS는  주어진 수열 내에서 가장 긴 부분 수열을 찾아내는 algorithm.**
 
-  <br>(LIS는 부분적으로 증가하는 수열 중 가장 긴 수열을 찾는 알고리즘이다.)
-
-  > - Double loop : Easy way to implement LIS.
+  > **Algorithm**
   >
-  > - Lower bound : Efficient way to implement LIS.
+  > 1. **`lis[]` array가 empty라면, 수열의 첫 번째 값 저장.**
+  > 2. **`lis[]` array의 가장 큰 값(마지막 index)보다 큰 수열의 값을 `lis[]`에 추가.**
+  > 3. **`lis[]` array의 가장 큰 값보다 작은 수열의 값은, `lower_bound()`를 통해 저장.**
   >
-  >   > → Value가 insert 될 수 있는 위치들 중 가장 작은 index의 값을 찾아내는 방식이다. 
-
-- Ex) 수열에서 Longest Increasing Subsequence를 구하기.
-
-  ><img width="260" alt="lis" src="https://user-images.githubusercontent.com/23169707/51529665-02541e80-1dee-11e9-85fe-baae0f5508fb.png">
-
-- Ex) LIS Source code.
-
-  > - Code
+  > * **Pseudo-code**
   >
-  > ```c++
-  > int L[1001], len, N;
-  > int main() 
-  > {
-  >     ios_base::sync_with_stdio(false);
-  >     cin >> N;
-  >     for(int i = 1; i <= N; ++i) 
-  >     {
-  >         int here;
-  >         cin >> here;
-  >         auto pos = lower_bound(L + 1, L + len + 1, here);
-  >         *pos = here;
-  >         if(pos == L + len + 1)
-  >             len++;
-  >     }
-  >     cout << len;
-  > }
-  > ```
-
-
-
-* Time complexity
-
-  > $$
-  > O(N^2) : Loop
-  > $$
+  >   ```c++
+  >   int lower_bound(int start, int end, int *arr, int target)	// Binary search
+  >   {
+  >       int mid;
+  >       while(end-start>0)		
+  >       {
+  >           mid = (start+end)/2;
+  >           if(arr[mid]<target)		// Go right.
+  >               start = mid+1;		
+  >           else 					// Go left.
+  >               end = mid;
+  >       }
+  >       return end+1;
+  >   }
+  >   
+  >   void LIS()
+  >   {
+  >       int idx = 0;
+  >       for(int i=0; i<N; i++)
+  >       {
+  >           if(i==0)					// #1. lis array is empty.
+  >               lis[idx++] = arr[i];
+  >           	
+  >           if(lis[idx] < arr[i])		// #2. Input data is bigger than lis.
+  >               lis[idx++] = arr[i];
+  >           else 						// #3. Compare the lis array.
+  >           {
+  >               int pos = lower_bound(0, idx, lis, arr[i]);
+  >               lis[pos-1] = arr[i];
+  >           }
+  >       }
+  >   }
+  >   ```
   >
-  > $$
-  > O(NlogN) : Loop, Binary search
-  > $$
+  >   
+
+- **Feature**
+
+  ><img width="302" alt="lis" src="https://user-images.githubusercontent.com/23169707/74341769-9b841780-4deb-11ea-82b1-d5ba3e650999.png">
+  >
+  >→ **`lis[]` array에 작은 값을 저장하기 위해 `binary_search`를 활용.**
+  >
+  >* **Time complexity**
+  >
+  >$$
+  >O(N log N)
+  >$$
   >
   >
+
