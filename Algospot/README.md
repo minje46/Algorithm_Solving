@@ -32,6 +32,6 @@
   >
   > [`Solve #6`](https://github.com/minje46/Algorithm_Solving/blob/master/Algospot/wild_card.cpp)
   >
-  > [`Solve #7`](https://github.com/minje46/Algorithm_Solving/blob/master/Algospot/lis.cpp)
+  > [`Solve #7`](https://github.com/minje46/Algorithm_Solving/blob/master/Algospot/jlis.cpp)
   >
   > [`Solve #8`](https://github.com/minje46/Algorithm_Solving/blob/master/Algospot/quantize.cpp)
