@@ -1,4 +1,4 @@
-# Dynamic Programming
+# Dynamic Programming ddd
 
 * **Dynamic programming is soving the problem with dividing from big to small.**
 
