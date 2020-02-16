@@ -17,6 +17,8 @@
   > [`Question #7`](https://algospot.com/judge/problem/read/JLIS)
   >
   > [`Question #8`](https://algospot.com/judge/problem/read/QUANTIZE)
+  >
+  > [`Question #9`](https://algospot.com/judge/problem/read/TRIPATHCNT)
 
 * **Answer**
 
@@ -35,3 +37,5 @@
   > [`Solve #7`](https://github.com/minje46/Algorithm_Solving/blob/master/Algospot/jlis.cpp)
   >
   > [`Solve #8`](https://github.com/minje46/Algorithm_Solving/blob/master/Algospot/quantize.cpp)
+  >
+  > [`Solve #9`](https://github.com/minje46/Algorithm_Solving/blob/master/Algospot/tripathcnt.cpp)
