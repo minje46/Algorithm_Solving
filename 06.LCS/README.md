@@ -4,124 +4,78 @@
 
 ------
 
-## 1. LCS (Longest Common Subsequence)
+## 2. LCS (Longest Common Subsequence)
 
-- **LCS is algorithm to find longest common subsequence.**
+- **LCS는 최장 공통 부분 문자열을 찾는 algorithm.**
 
-  <br>(LCS는 최장 공통 부분 문자열을 찾는 알고리즘이다.)
+  > `substring` : 연속된 부분 문자열.
+>
+  > `subsequence` : 연속적이지 않은 부분 문자열.
+  >
+  > **Algorithm**
+  >
+  > 1. **`string str1`과 `string str2`를 비교하기 위해 `"0"`을 `insert`**.
+  > 2. **두 개의 `string`을 비교하면서, 같은 문자일 경우, 최장 길이를 증가**.
+  > 3. **두 개의 `string`이 다른 문자일 경우, `cache[][]`의 왼쪽과 위쪽의 값 중에서 큰 값을 저장**.
+  >
+  > - **Pseudo-code**
+  >
+  >   ```c++
+  >   int cache[MAX][MAX];
+  >   string s1="ACAYKP", s2="CAPCAK";
+  >   int LCS(int i, int j)
+  >   {
+  >       memset(cache,0,sizeof(cache));
+  >       string str1="0"+s1, str2="0"+s2;		// #1. Initialization
+  >       for(int i=0; i<str1.length(); i++)
+  >       {
+  >           for(int j=0; j<str2.length(); j++)
+  >           {
+  >               if(i==0 || j==0)			
+  >                   continue;
+  >               
+  >               if(str1[i] == str2[j])			// #2. Increase lcs
+  >                   cache[i][j] = cache[i-1][j-1]+1;
+  >               else							// #3. Load previous data.
+  >                   cache[i][j] = max(cache[i-1][j],cache[i][j-1]);
+  >           }
+  >       }
+  >   }
+  >   ```
 
-  > * Subsequence
-  >
-  >   → 연속적이지 않은 부분 문자열.
-  >
-  > * Substring
-  >
-  >   → 연속된 부분 문자열.
+* **Feature**
 
-
-
-- Ex) "ACAYKP" 와 "CAPCAK" 의 LCS 구하기.
-
-  > 1. "ACAYKP"를 기준 string으로 설정하고 "CAPCAK"를 비교 string을 선택. (+ Initialization.)
+  > ![image](https://user-images.githubusercontent.com/23169707/75038349-8ac55700-54f9-11ea-9ada-c22589ff7eff.png)
   >
-  >    ![image](https://user-images.githubusercontent.com/23169707/50851045-83141480-1330-11e9-89f6-6f4496ce1801.png)
-  >
-  > 2. "ACAYKP"를 기준으로 "C" string의 LCS 값을 구한다.
-  >
-  >    ![image](https://user-images.githubusercontent.com/23169707/50851123-b9ea2a80-1330-11e9-978a-5969c7a7c7f5.png)
-  >
-  > 3. "ACAYKP"를 기준으로 "CAP" string의 LCS 값을 구한다.
-  >
-  >    ![image](https://user-images.githubusercontent.com/23169707/50851162-d7b78f80-1330-11e9-94a7-dde8354e3b84.png)
-  >
-  > 4. "ACAYKP"를 기준으로 "CAPCAK" string의 final LCS 값을 구한다.
-  >
-  >    ![image](https://user-images.githubusercontent.com/23169707/50851205-f9b11200-1330-11e9-9ad6-3794371aacf5.png)
-  >
-  > 5. Memoization의 table을 참조해서 LCS 길이 구하기.
-  >
-  >    ![image](https://user-images.githubusercontent.com/23169707/50850948-3e887900-1330-11e9-8a4c-62aa8427865c.png)
-
-- Ex) LCS Source code.
-
-  > * Code
+  > → **`lcs`의 단어를 추출하기 위해 backtracking을 진행.**
   >
   > ```c++
-  > int main() 
+  > stack<int> stk;
+  > int i = str1.length()-1, j=str2.length()-1;
+  > while(cache[i][j]!=0)		// From end ponit to start point
   > {
-  >     int LCS_length = 0, max;	//LCS length.
-  >     int **table; 				//LCS saved in this table.
-  >     string str1, str2;
-  >  
-  >     //set String.
-  >     cin >> str1;
-  >     cin >> str2;
-  >     
-  >     // For comparing on table.
-  >     str1 = "0" + str1;
-  >     str2 = "0" + str2;
-  >  
-  >     //set Table.
-  >     int len1, len2;
-  >     len1 = str1.length();
-  >     len2 = str2.length();
-  >  
-  >     table = new int*[len2];
-  >     for (int i = 0; i < len2; i++) 
-  >         table[i] = new int[len1];
-  >     
-  >  
-  >     for (int i = 0; i < len1; i++) 
-  >         table[0][i] = 0;
-  >     
-  >  
-  >     //Memoization Table Index and LCS Length
-  >     for (int i = 1; i < len2; i++) 
+  >     if(cache[i][j]==cache[i][j-1])		// #1. Check left value	
+  >         j--;
+  >     else if(cache[i][j]==cache[i-1][j])	// #2. Check upper value
+  >         i--;
+  >     else if(cache[i][j]-1==cache[i-1][j-1])		// #3. Figure out lcs word
   >     {
-  >         max = 0;
-  >         table[i][0] = 0;
-  >         for (int j = 1;j < len1; j++) 
-  >         {
-  >             if (str2[i]== str1[j])
-  >             {
-  >                 max = table[i-1][j-1] + 1;
-  >                 table[i][j] = max;
-  >             }
-  >             else 
-  >             {
-  >                 if(table[i][j-1] > table[i-1][j])
-  >                     table[i][j] = table[i][j-1];
-  >                 else
-  >                     table[i][j] = table[i-1][j];
-  >             }
-  >         }
-  >         if (LCS_length < max)
-  >             LCS_length = max;
+  >         stk.push(i);
+  >         i--;	j--;
   >     }
-  >     cout << LCS_length;			// The longest length.
-  >  
-  >     int temp0, temp1, for_j;
-  >     temp1 = LCS_length;
-  >     temp0 = temp1 - 1;
-  >     for_j = len1 - 1;
-  >     string LCS = "";
-  >  
-  >     //Calculation LCS 
-  >     for (int i = len2-1; i >0; i--)
-  >     {
-  >         for (int j = for_j; j > 0; j--) 
-  >         {	//[i][j] is destination coordinate.
-  >             if (table[i][j] == temp1 && table[i][j - 1] == temp0 && table[i - 1][j - 1] == temp0 && table[i - 1][j] == temp0)
-  >             {
-  >                 temp0--;
-  >                 temp1--;
-  >                 LCS = str2[i] + LCS;
-  >                 for_j = j;
-  >                 break;
-  >             }
-  >         }
-  >     }
-  >  
-  >     cout << LCS << endl;		// The subsequence of LCS.
+  > }
+  > 
+  > while(!stk.empty())
+  > {
+  >     cout << str1[stk.top()];
+  >     stk.pop();
   > }
   > ```
+  >
+  > 
+  >
+  > - **Time complexity**
+  >
+  > $$
+  > O(NM)
+  > $$
