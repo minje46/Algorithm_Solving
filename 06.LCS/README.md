@@ -1,8 +1,6 @@
 # Dynamic Programming 
 
-* **Dynamic programming is soving the problem with dividing from big to small.**
-
-  <br>(다이나믹 프로그래밍은 큰 문제를 작은 문제로 나눠서 푸는 알고리즘이다.)
+* **Dynamic programming은 처음 문제를 더 작은 문제들로 나눈뒤 각 조각의 답을 계산하고, 이를 활용하여 원래 문제에 대한 답을 얻는 방식.**
 
 ------
 
