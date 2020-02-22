@@ -3,9 +3,9 @@
 - **Greedy algorithm은 각 단계에 있어서 가장 좋은 것을 선택하는 방식.**
 
   > **Algorithm**
->
+  >
   > 1. **`Selection procedure` : 지금 순간에, 가장 최적인 옵션을 선택한다.**
-> 2. **`Feasibility check` : 선택한 옵션이 적절한지 검사한다.**
+  > 2. **`Feasibility check` : 선택한 옵션이 적절한지 검사한다.**
   > 3. **`Solution check` : 선택한 옵션 집합(locally solution set)이 문제의 답(globally solution)이 않았다면, 위의 1~2를 반복.**
   >
   > * **Pseudo - code**
@@ -28,8 +28,6 @@
   >       }
   >   }
   >   ```
-  > 
-
 
 - **Feature.**
 
