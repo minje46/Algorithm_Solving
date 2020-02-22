@@ -20,15 +20,15 @@ int pack(int capacity, int item)				// To figure out the maximum capacity taken 
 	if (item == N)			// Base case.[The whole of items.]
 		return 0;
 
-	int &result = cache[capacity][item];
-	if (result != -1)
-		return result;
+	int &ret = cache[capacity][item];
+	if (ret != -1)
+		return ret;
 
-	result = pack(capacity, item + 1);		// Not pick.[Pass this item.]
+	ret = pack(capacity, item + 1);			// Not pick.[Pass this item.]
 
 	if (capacity >= volume[item])			// Pick this item.
-		result = max(result, pack(capacity - volume[item], item + 1) + need[item]);
-	return result;
+		ret = max(ret, pack(capacity - volume[item], item + 1) + need[item]);
+	return ret;
 }
 
 void reconstruct(int capacity, int item, vector<string> &vc)			// To backtrack the items could take it.
