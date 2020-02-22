@@ -9,7 +9,7 @@
 - **LCS는 최장 공통 부분 문자열을 찾는 algorithm.**
 
   > `substring` : 연속된 부분 문자열.
->
+  >
   > `subsequence` : 연속적이지 않은 부분 문자열.
   >
   > **Algorithm**
@@ -42,7 +42,6 @@
   >       }
   >   }
   >   ```
-
 * **Feature**
 
   > ![image](https://user-images.githubusercontent.com/23169707/75038349-8ac55700-54f9-11ea-9ada-c22589ff7eff.png)
