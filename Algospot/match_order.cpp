@@ -1,26 +1,35 @@
 #include<iostream>
 #include<algorithm>
-#include<vector>
+#include<memory.h>
+
+#define MAX 101
 
 using namespace std;
 
 int N;											// N = The number of players.
-vector<int> vc[2];						// vc = The memory of input data.
+int russia[MAX], korea[MAX];		// russia, korea = The memory of input data.
+bool check[MAX];						// check = The memory of used or not.
 int answer;									// answer = The maximum number of winning players.
 
-void Greedy()
+int Greedy()				// To figure out the maximum winning combination.	
 {
-	for (int i = 0; i < 2; i++)
-		sort(vc[i].begin(), vc[i].end(), greater<int>());
+	sort(russia, russia + N);			// Ascending sort.
+	sort(korea, korea + N);
 
-	while (!vc[0].empty())
+	int cnt = 0;
+	for (int i = 0; i < N; i++)
 	{
-		if (vc[0][0] > vc[1][0])
+		for (int j = i; j < N; j++)
 		{
-			vc
+			if (!check[j] && russia[i] <= korea[j])
+			{
+				check[j] = true;
+				cnt++;
+				break;
+			}
 		}
-
 	}
+	return cnt;
 }
 
 int main(void)
@@ -31,19 +40,16 @@ int main(void)
 	int test_case;
 	cin >> test_case;
 	for (int t = 1; t <= test_case; t++)
-	{
-		cin >> N;
-		for (int i = 0; i < 2; i++)
-		{
-			int num;
-			for (int j = 0; j < N; j++)
-			{
-				cin >> num;
-				vc[i].push_back(num);
-			}
-		}
+	{	// Initialization.
+		memset(check, false, sizeof(check));
 
-		Greedy();
+		cin >> N;
+		for (int i = 0; i < N; i++)
+			cin >> russia[i];
+		for (int j = 0; j < N; j++)
+			cin >> korea[j];
+
+		answer = Greedy();
 
 		cout << answer << endl;
 	}
