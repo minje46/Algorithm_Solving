@@ -1,6 +1,6 @@
 # Permutation(순열)
 
-- **Permutation은 서로 다른 n개 중에 r개를 선택하여, 순서있게 배열하는 것. **
+- **Permutation은 서로 다른 n개 중에 r개를 선택하여, 순서있게 배열하는 것.**
 
   > **Algorithm**
   >
