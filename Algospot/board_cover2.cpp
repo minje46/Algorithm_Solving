@@ -13,7 +13,7 @@ int R, C;																	// R,C = The size of block.
 char block[4][MAX][MAX];										// block = The memory of block.
 int answer;																// answer = The maximum number of blocks to put in map.
 
-void DFS(int y, int x, int cnt)
+void DFS(int y, int x, int cnt)																										//
 {
 	for (int k = 0; k < 4; k++)
 	{
