@@ -14,13 +14,9 @@
 
 
 
-# Algorithm
+# Self diagnosis!
 
-**Do learn algorithm concept.**
-
-> `theory` : summarized by mark down.
->
-> `problems` : problem solved by c++.
+**Do diagnosis what my problem is then, solve again later.**
 
 * `simulation` 
 
@@ -28,7 +24,7 @@
   >
   >    > [`Board Cover2`](https://algospot.com/judge/problem/read/BOARDCOVER2)
 
-# Problem_Solving
+# 
 
 **Solve bunch of algorithm problems.**
 
