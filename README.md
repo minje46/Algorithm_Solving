@@ -2,6 +2,16 @@
 
 **Don't be fail in coding test anymore in 2020.**
 
+* **Algorithm**
+
+  > `theory` : summarized by mark down.
+  >
+  > `problems` : problem solved by c++.
+
+* **Problem solving**
+
+  > Solve bunch of algorithm problems.
+
 
 
 # Algorithm
