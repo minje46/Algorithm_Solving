@@ -18,7 +18,7 @@
 
 **Do diagnosis what my problem is then, solve again later.**
 
-* `simulation` 
+* `**simulation**` 
 
   > 1. **Array_rotation** : 배열을 회전하는 과정에서 index `(i,j)` 뒤바뀌는 것이 어렵다. 
   >
@@ -26,7 +26,7 @@
 
 # 
 
-**Solve bunch of algorithm problems.**
+​	작년 카카오 문제들 위주.
 
 * **Tricky problems** 
 
