@@ -6,20 +6,17 @@
 
 # Algorithm
 
-**Do learn algorithm concept** 
+**Do learn algorithm concept.**
 
-* `theory` : summarized by mark down.
-* `problems` : problem solved by c++.
-
-
-
-`simulation` 
-
-> → Theory : [보여질 이름] (링크)
+> `theory` : summarized by mark down.
 >
-> → Basic : [] ()
+> `problems` : problem solved by c++.
 
+* `simulation` 
 
+  > 1. **Array_rotation** : 배열을 회전하는 과정에서 index `(i,j)` 뒤바뀌는 것이 어렵다. 
+  >
+  >    > [`Board Cover2`](https://algospot.com/judge/problem/read/BOARDCOVER2)
 
 # Problem_Solving
 
