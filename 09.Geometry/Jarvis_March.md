@@ -1,9 +1,7 @@
 # Convex Hull
 
 - **The convex hull includes all sorts of points in minimum size of polygon.**
-
   <br>
-
   (컨벡스 헐이란, 여러 개의 점이 주어졌을 경우 모든 점들을 포함하는 최소 크기의 볼록 다각형을 말한다.)
 
   > → 2차원 평면상에 여러개의 점이 있을 때, 그 점 중에서 일부를 이용하여 convex hull을 만들되 convex hull 내부에 모든 점을 포함시키는 것.
