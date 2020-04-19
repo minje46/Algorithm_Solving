@@ -258,7 +258,7 @@
 
 ## 8. Radix sort
 
-* **Radix sort(기수 정렬)는 data를 구성하는 기본 요소인 radix(기수)를 비교하며 정렬하는 algorithm. ** 
+* **Radix sort(기수 정렬)는 data를 구성하는 기본 요소인 radix(기수)를 비교하며 정렬하는 algorithm.** 
 
   > ```c++
   > void Radix_sort(int arr[], int n, int len)		// maximum value's length 필요.
