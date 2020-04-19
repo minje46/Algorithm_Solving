@@ -5,12 +5,16 @@
   > `비교연산` : data의 크기를 비교하는 연산 → **Big-O를 결정하는 기준**
   >
   > `데이터 이동` : data의 위치를 변경하기 위한 이동 → **세밀한 비교 가능**
+  >
+  > <img width="410" alt="st" src="https://user-images.githubusercontent.com/23169707/79690395-29212f00-8295-11ea-8559-53d1d46cf7ef.png">
 
 * **elements 중에 같은 key 값을 가진 node가 여러개인 경우, element의 순서로 구분하는 경우가 존재할 수 있다.**
 
   > `stable` : elements의 순서가 sorting algorithm에 변경되지 않는다.
   >
   > `unstable` : elements의 순서가 sorting algorithm에 의해 변경된다. 
+
+
 
 ------
 
@@ -337,14 +341,3 @@
   >
   > → **평균적인 성능은 insertion sort보다 빠르지만, 최악의 성능은 `O(N^2)`이며, gap만큼 이동하게되면서 unstable sort.**
 
-## 10. Topological sort
-
-* **Topological sort(위상 정렬)는 **
-
-  > ```c++
-  > ㄴ
-  > ```
-  >
-  > s
-  >
-  > → **ㄴ ㄴㄴ**
