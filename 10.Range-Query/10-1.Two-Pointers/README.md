@@ -3,7 +3,7 @@
 - **Range query는 주어진 범위 내에서 search를 하기 위한 방식을 말한다.**
 
   > `pros` : `O(N^2)` 보다 빠른 성능으로 search가 가능하다.
->
+  >
   > `cons` : 
   >
   > **Examples** : `two-pointers` / `sliding-window` / `segment-tree`
