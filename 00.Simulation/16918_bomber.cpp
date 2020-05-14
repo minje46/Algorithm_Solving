@@ -19,6 +19,7 @@ void Count_down()			// To decrease the bomb's time.
 		{
 			if (map[i][j] > 0)
 				map[i][j]--;
+		}
 	}
 }
 
