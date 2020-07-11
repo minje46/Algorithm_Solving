@@ -53,28 +53,26 @@
   > int i = str1.length()-1, j=str2.length()-1;
   > while(cache[i][j]!=0)		// From end ponit to start point
   > {
-  >     if(cache[i][j]==cache[i][j-1])		// #1. Check left value	
-  >         j--;
-  >     else if(cache[i][j]==cache[i-1][j])	// #2. Check upper value
-  >         i--;
-  >     else if(cache[i][j]-1==cache[i-1][j-1])		// #3. Figure out lcs word
-  >     {
-  >         stk.push(i);
-  >         i--;	j--;
-  >     }
+  >  if(cache[i][j]==cache[i][j-1])		// #1. Check left value	
+  >      j--;
+  >  else if(cache[i][j]==cache[i-1][j])	// #2. Check upper value
+  >      i--;
+  >  else if(cache[i][j]-1==cache[i-1][j-1])		// #3. Figure out lcs word
+  >  {
+  >      stk.push(i);
+  >      i--;	j--;
+  >  }
   > }
   > 
   > while(!stk.empty())
   > {
-  >     cout << str1[stk.top()];
-  >     stk.pop();
+  >  cout << str1[stk.top()];
+  >  stk.pop();
   > }
   > ```
-  >
-  > 
-  >
-  > - **Time complexity**
-  >
+  
+* **Time complexity**
+
   > $$
-  > O(NM)
+  >O(NM)
   > $$
