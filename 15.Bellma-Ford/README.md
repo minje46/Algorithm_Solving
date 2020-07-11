@@ -13,7 +13,7 @@
   > * **Pseudo-code**
   >
   >   ```c++
-  >  void Bellman_Ford()
+  >    void Bellman_Ford()
   >   {
   >      // Init Single source.
   >       for(int i=1; i<=V; i++)
