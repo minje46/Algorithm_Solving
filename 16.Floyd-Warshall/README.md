@@ -11,18 +11,18 @@
   > * **Pseudo-code**
   >
   >   ```c++
-  >  void Floyd_Warshall()
+  > void Floyd_warshall()
   >   {
-  >     for (k = 1; k <= V; k++)		// k = 경유하는 Node.
+  >       for (k = 1; k <= V; k++)		// k = 경유하는 Node.
   >       {	
-  >          for (i = 1; i <= V; i++)	// i = Departure node.
+  >           for (i = 1; i <= V; i++)	// i = Departure node.
   >           {
   >               for (j = 1; j <= V; j++)	// j = Destination node.
   >               {
   >                   if (dist[i][k] + dist[k][j] < dist[i][j])
   >                       dist[i][j] = dist[i][k] + dist[k][j];
   >               }
-  >           }
+  >          }
   >       }
   >   }
   >   ```
