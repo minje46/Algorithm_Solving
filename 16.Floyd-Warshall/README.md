@@ -11,7 +11,7 @@
   > * **Pseudo-code**
   >
   >   ```c++
-  > void Floyd_warshall()
+  >   void Floyd_warshall()
   >   {
   >       for (k = 1; k <= V; k++)		// k = 경유하는 Node.
   >       {	
@@ -22,17 +22,17 @@
   >                   if (dist[i][k] + dist[k][j] < dist[i][j])
   >                       dist[i][j] = dist[i][k] + dist[k][j];
   >               }
-  >          }
+  >           }
   >       }
   >   }
   >   ```
-  
+
+
 - **Features**
 
-  > - **negative cycle이 없어야 한다.**
-  > - **negative value가 있어도 가능하다**
-
-
+  >- **negative cycle이 없어야 한다.**
+  >- **negative value가 있어도 가능하다**
+  
 - **Time complexity.**
 
   > $$
