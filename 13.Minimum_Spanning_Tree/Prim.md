@@ -1,5 +1,3 @@
-# Data Structure
-
 # Minimum Spanning Tree
 
 - **MST는 edge(간선)의 weight(가중치)를 고려하여 최소 비용의 spanning tree(신장 트리)를 선택하는 것.**
