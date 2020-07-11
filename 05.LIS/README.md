@@ -53,15 +53,18 @@
   
 - **Feature**
 
-  ><img width="302" alt="lis" src="https://user-images.githubusercontent.com/23169707/74341769-9b841780-4deb-11ea-82b1-d5ba3e650999.png">
+  > 
   >
-  >→ **`lis[]` array에 작은 값을 저장하기 위해 `binary_search`를 활용.**
+  > <img width="302" alt="lis" src="https://user-images.githubusercontent.com/23169707/74341769-9b841780-4deb-11ea-82b1-d5ba3e650999.png">
   >
-  >* **Time complexity**
+  > 
   >
+  > → **`lis[]` array에 작은 값을 저장하기 위해 `binary_search`를 활용.**
+  
+- **Time complexity**
+
   >$$
   >O(N log N)
   >$$
-  >
   >
 
